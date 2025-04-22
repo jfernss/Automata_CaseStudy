@@ -6,6 +6,7 @@
     <title>Euclidean Algorithm</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="Fliptop.jpg" type="image/png" />
 
     <style>
       body {
@@ -142,7 +143,7 @@
             $steps = [];
 
             if ($num1 <= 0 || $num2 <= 0): ?>
-                <div id="errorCard" class="card mx-auto mt-4" style="max-width: 1200px; background-color: #ff073a;">
+                <div id="errorCard" class="card mx-auto mt-4" style="max-width: 1200px; background-color: #2c2c2c; border: 2px solid #39ff14;">
                     <div class="card-body">
                         <h2 class="fw-bold text-center" style="color: #fff;">Error</h2>
                         <p class="fs-4 mb-0 text-center" style="font-size: 18px; color: #fff;">Please enter positive integers for both numbers.</p>

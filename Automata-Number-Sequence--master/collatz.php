@@ -6,6 +6,7 @@
     <title>Collatz Sequence</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="Fliptop.jpg" type="image/png" />
 
     <style>
       body {
@@ -100,6 +101,32 @@
         .btn-warning, .btn-danger, .btn-home {
           font-size: 14px;
         }
+
+        .form-control {
+          font-size: 16px;
+        }
+
+        .form-label {
+          font-size: 14px;
+        }
+
+        .btn {
+          font-size: 14px;
+        }
+      }
+
+      @media (max-width: 425px) {
+        .form-control {
+          font-size: 14px;
+        }
+
+        .form-label {
+          font-size: 12px;
+        }
+
+        .btn {
+          font-size: 12px;
+        }
       }
     </style>
   </head>
@@ -117,9 +144,26 @@
         <div class="card-body">
           <form method="POST" action="">
             <div class="row g-3 align-items-center">
-              <div class="col-12 d-flex align-items-center justify-content-between">
-                <label for="startNumber" class="form-label fw-bold me-3 fs-5">Input an odd number:</label>
-                <input type="number" name="startNumber" class="form-control me-3" id="startNumber" placeholder="Enter an odd number" required style="flex: 1;">
+               <!-- Label Below the Input -->
+               <div class="col-12 text-center mt-3">
+                <label for="startNumber" class="form-label fw-bold fs-5">
+                  Input an odd number:
+                </label>
+              </div>
+              <!-- Input Field at the Top -->
+              <div class="col-12">
+                <input 
+                  type="number" 
+                  name="startNumber" 
+                  class="form-control" 
+                  id="startNumber" 
+                  placeholder="Enter an odd number" 
+                  required 
+                  style="font-size: 18px; text-align: center;"
+                />
+              </div>
+              <!-- Buttons at the Bottom -->
+              <div class="col-12 d-flex justify-content-center mt-3">
                 <button type="submit" class="btn btn-warning btn-lg me-2">Submit</button>
                 <a href="index.html" class="btn btn-home btn-lg">Home</a>
               </div>
@@ -130,39 +174,15 @@
     </div>
 
     <?php if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['startNumber'])): ?>
-        <?php
-            $startNumber = intval($_POST['startNumber']);
-            $collatz = [];
+    <?php
+        $startNumber = intval($_POST['startNumber']);
+        $collatz = [];
 
-            if ($startNumber % 2 === 0): ?>
-                <div id="errorCard" class="card mx-auto mt-4" style="max-width: 1200px; background-color: #ff073a;">
-                    <div class="card-body">
-                        <h2 class="fw-bold text-center" style="color: #fff;">Error</h2>
-                        <p class="fs-4 mb-0 text-center" style="font-size: 18px; color: #fff;">Please enter an odd number.</p>
-                        <div class="mt-4 d-flex justify-content-end align-items-center">
-                            <p class="fw-bold fs-4 mb-0 me-3">Try again?</p>
-                            <form method="POST" action="" class="d-flex">
-                                <button type="submit" name="tryAgain" class="btn btn-warning btn-lg me-2">YES</button>
-                                <a href="index.html" class="btn btn-danger btn-lg">NO</a>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            <?php else:
-                $collatz[] = $startNumber;
-                while ($startNumber != 1) {
-                    if ($startNumber % 2 == 0) {
-                        $startNumber /= 2;
-                    } else {
-                        $startNumber = $startNumber * 3 + 1;
-                    }
-                    $collatz[] = $startNumber;
-                }
-            ?>
-            <div id="collatzCard" class="card mx-auto mt-4" style="max-width: 1200px;">
+        if ($startNumber <= 0): ?>
+            <div id="errorCard" class="card mx-auto mt-4" style="max-width: 1200px; background-color: #2c2c2c; border: 2px solid #39ff14;">
                 <div class="card-body">
-                    <h2 class="fw-bold text-center">The Collatz Sequence:</h2>
-                    <p class="fs-4 mb-0 text-center"><?php echo implode(', ', $collatz); ?></p>
+                    <h2 class="fw-bold text-center" style="color: #fff;">Error</h2>
+                    <p class="fs-4 mb-0 text-center" style="font-size: 18px; color: #fff;">Enter a positive odd integer.</p>
                     <div class="mt-4 d-flex justify-content-end align-items-center">
                         <p class="fw-bold fs-4 mb-0 me-3">Try again?</p>
                         <form method="POST" action="" class="d-flex">
@@ -172,8 +192,46 @@
                     </div>
                 </div>
             </div>
-        <?php endif; ?>
+        <?php elseif ($startNumber % 2 === 0): ?>
+            <div id="errorCard" class="card mx-auto mt-4" style="max-width: 1200px; background-color: #2c2c2c; border: 2px solid #39ff14;">
+                <div class="card-body">
+                    <h2 class="fw-bold text-center" style="color: #fff;">Error</h2>
+                    <p class="fs-4 mb-0 text-center" style="font-size: 18px; color: #fff;">Please enter an odd number.</p>
+                    <div class="mt-4 d-flex justify-content-end align-items-center">
+                        <p class="fw-bold fs-4 mb-0 me-3">Try again?</p>
+                        <form method="POST" action="" class="d-flex">
+                            <button type="submit" name="tryAgain" class="btn btn-warning btn-lg me-2">YES</button>
+                            <a href="index.html" class="btn btn-danger btn-lg">NO</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        <?php else:
+            $collatz[] = $startNumber;
+            while ($startNumber != 1) {
+                if ($startNumber % 2 == 0) {
+                    $startNumber /= 2;
+                } else {
+                    $startNumber = $startNumber * 3 + 1;
+                }
+                $collatz[] = $startNumber;
+            }
+        ?>
+        <div id="collatzCard" class="card mx-auto mt-4" style="max-width: 1200px;">
+            <div class="card-body">
+                <h2 class="fw-bold text-center">The Collatz Sequence:</h2>
+                <p class="fs-4 mb-0 text-center"><?php echo implode(', ', $collatz); ?></p>
+                <div class="mt-4 d-flex justify-content-end align-items-center">
+                    <p class="fw-bold fs-4 mb-0 me-3">Try again?</p>
+                    <form method="POST" action="" class="d-flex">
+                        <button type="submit" name="tryAgain" class="btn btn-warning btn-lg me-2">YES</button>
+                        <a href="index.html" class="btn btn-danger btn-lg">NO</a>
+                    </form>
+                </div>
+            </div>
+        </div>
     <?php endif; ?>
+<?php endif; ?>
 
     <!-- Additional Information Section -->
     <div class="container mt-5 mb-5" style="margin-top: 15rem;">

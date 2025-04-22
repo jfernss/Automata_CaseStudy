@@ -31,7 +31,7 @@
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        gap: 1rem;
+        gap: 1.5rem;
         padding: 2rem;
         margin-top: 5rem;
       }
@@ -41,19 +41,22 @@
         font-size: 24px;
         background-color: #39ff14;
         color: #000;
-        border: 1px solid #39ff14;
-        min-width: 200px;
+        border: none;
+        border-radius: 10px;
+        min-width: 250px;
+        height: 60px;
         text-align: center;
         transition: all 0.3s ease;
-        box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+        box-shadow: 0 0 15px #39ff14, 0 0 30px #39ff14;
       }
 
       .menu-buttons .btn:hover {
         background-color: #000;
         color: #39ff14;
-        box-shadow: 0 0 20px #39ff14, 0 0 30px #39ff14;
+        box-shadow: 0 0 20px #39ff14, 0 0 40px #39ff14;
       }
 
+      /* For tablets and smaller screens (768px and below) */
       @media (max-width: 768px) {
         .menu-buttons {
           flex-direction: column;
@@ -62,8 +65,37 @@
         }
 
         .menu-buttons .btn {
-          width: 100%;
           font-size: 20px;
+          min-width: 200px;
+          height: 50px;
+        }
+      }
+
+      /* For small devices (425px and below) */
+      @media (max-width: 425px) {
+        .menu-buttons {
+          gap: 1rem;
+          margin-top: 2rem;
+        }
+
+        .menu-buttons .btn {
+          font-size: 18px;
+          min-width: 180px;
+          height: 45px;
+        }
+      }
+
+      /* For extra small devices (375px and below) */
+      @media (max-width: 375px) {
+        .menu-buttons {
+          gap: 0.8rem;
+          margin-top: 1.5rem;
+        }
+
+        .menu-buttons .btn {
+          font-size: 16px;
+          min-width: 160px;
+          height: 40px;
         }
       }
     </style>
