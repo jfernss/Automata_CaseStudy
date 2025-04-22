@@ -1,4 +1,3 @@
-<!-- filepath: c:\Xampp\htdocs\Automata-Number-Sequence--master\Automata-Number-Sequence--master\fibonacci.php -->
 <!doctype html>
 <html lang="en">
   <head>
@@ -23,9 +22,8 @@
         box-shadow: 0 0 15px #39ff14; /* Neon glow effect */
       }
 
-      .card h2 {
+      .card h2, .card h5 {
         font-family: 'Orbitron', sans-serif;
-        font-size: 36px;
         color: #39ff14; /* Neon green text */
       }
 
@@ -63,48 +61,72 @@
         box-shadow: 0 0 10px #ff073a, 0 0 20px #ff073a; /* Glow effect */
       }
 
-      label {
-        color: #39ff14; /* Neon green labels */
+      .btn-home {
+        background-color: #007bff; /* Blue button */
+        border: none;
+        color: #fff;
         font-family: 'Orbitron', sans-serif;
         font-size: 18px;
+        transition: all 0.3s ease;
       }
 
-      input {
-        background-color: #333;
+      .btn-home:hover {
+        background-color: #0056b3;
         color: #fff;
-        border: 1px solid #39ff14;
-        font-family: 'Roboto', sans-serif;
+        box-shadow: 0 0 10px #007bff, 0 0 20px #007bff; /* Glow effect */
       }
 
-      input:focus {
-        border-color: #39ff14;
-        box-shadow: 0 0 10px #39ff14;
+      @media (max-width: 768px) {
+        .card {
+          margin: 10px;
+        }
+
+        .card h2, .card h5 {
+          font-size: 24px;
+        }
+
+        .card p {
+          font-size: 16px;
+        }
+
+        label {
+          font-size: 14px;
+        }
+
+        input {
+          font-size: 14px;
+        }
+
+        .btn-warning, .btn-danger, .btn-home {
+          font-size: 14px;
+        }
       }
     </style>
   </head>
 
   <body>
-    <div class="card position-absolute top-0 start-50 translate-middle-x" style="width: 1200px; margin-top: 150px;">
+    <div class="container mt-5">
+      <div class="card mx-auto" style="max-width: 1200px; margin-top: 120px;">
         <div class="card-body">
-           <h2 class="fw-bold">Fibonacci Sequence</h2>
-           <p class="lh-base fst-italic">The Fibonacci sequence is a set of integers (the Fibonacci numbers) that starts with a zero, followed by a one, then by another one, and then by a series of steadily increasing numbers. The sequence follows the rule that each number is equal to the sum of the preceding two numbers.</p>
+          <h2 class="fw-bold text-center">Fibonacci Sequence</h2>
+          <p class="lh-base fst-italic text-center">The Fibonacci sequence is a set of integers (the Fibonacci numbers) that starts with a zero, followed by a one, then by another one, and then by a series of steadily increasing numbers. The sequence follows the rule that each number is equal to the sum of the preceding two numbers.</p>
         </div>
-    </div>
+      </div>
 
-    <div class="card position-absolute top-0 start-50 translate-middle-x" style="width: 1200px; margin-top: 320px;">
+      <div class="card mx-auto mt-4" style="max-width: 1200px;">
         <div class="card-body">
-            <form method="POST" action="">
-                <div class="row">
-                    <label for="numTerms" class="col-sm-3 col-form-label col-form-label-lg fw-bold">Input the no. of terms: </label>
-                    <div class="col-sm-7">
-                        <input type="number" name="numTerms" class="form-control form-control-lg" id="numTerms" placeholder="Enter number" required>
-                    </div>
-                    <div class="col-sm-2">
-                        <button type="submit" class="btn btn-warning btn-lg">Submit</button>
-                    </div>
-                </div>
-            </form>
+          <form method="POST" action="">
+            <div class="row g-3 align-items-center">
+              <div class="col-12 d-flex align-items-center justify-content-between">
+                <label for="numTerms" class="form-label fw-bold me-3 fs-5">Input the number of terms:</label>
+                <input type="number" name="numTerms" class="form-control me-3" id="numTerms" placeholder="Enter number" required style="flex: 1;">
+                <button type="submit" class="btn btn-warning btn-lg me-2">Submit</button>
+                <a href="index.html" class="btn btn-home btn-lg">Home</a>
+              </div>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
 
     <?php if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['numTerms'])): ?>
@@ -113,10 +135,10 @@
             $fibonacci = [];
 
             if ($numTerms < 3): ?>
-                <div id="errorCard" class="card position-absolute top-0 start-50 translate-middle-x" style="width: 1200px; margin-top: 425px; background-color: #ff073a;">
+                <div id="errorCard" class="card mx-auto mt-4" style="max-width: 1200px; background-color: #ff073a;">
                     <div class="card-body">
-                        <h2 class="fw-bold" style="color: #fff;">Error</h2>
-                        <p class="fs-4 mb-0" style="font-size: 18px; color: #fff;">Please enter a number greater than or equal to 3.</p>
+                        <h2 class="fw-bold text-center" style="color: #fff;">Error</h2>
+                        <p class="fs-4 mb-0 text-center" style="font-size: 18px; color: #fff;">Please enter a number greater than or equal to 3.</p>
                         <div class="mt-4 d-flex justify-content-end align-items-center">
                             <p class="fw-bold fs-4 mb-0 me-3">Try again?</p>
                             <form method="POST" action="" class="d-flex">
@@ -133,14 +155,10 @@
                     $fibonacci[] = $fibonacci[$i - 1] + $fibonacci[$i - 2];
                 }
             ?>
-        <div id="fibonacciCard" class="card position-absolute top-0 start-50 translate-middle-x" style="width: 1200px; margin-top: 425px;">
+        <div id="fibonacciCard" class="card mx-auto mt-4" style="max-width: 1200px;">
             <div class="card-body">
-                <div class="d-flex align-items-center">
-                    <h2 class="fw-bold">The Fibonacci Numbers : </h2>
-                    <h2 class="fw-bold pt-1 ps-1"><?php echo $numTerms; ?> terms</h2>
-                </div>
-                
-                <p class="fs-4 mb-0"><?php echo implode(', ', $fibonacci); ?></p>
+                <h2 class="fw-bold text-center">The Fibonacci Numbers:</h2>
+                <p class="fs-4 mb-0 text-center"><?php echo implode(', ', $fibonacci); ?></p>
                 <div class="mt-4 d-flex justify-content-end align-items-center">
                     <p class="fw-bold fs-4 mb-0 me-3">Try again?</p>
                     <form method="POST" action="" class="d-flex">
@@ -152,6 +170,37 @@
         </div>
     <?php endif; ?>
     <?php endif; ?>
+
+    <!-- Additional Information Section -->
+    <div class="container mt-5 mb-5" style="margin-top: 15rem;">
+      <h2 class="text-center mb-4" style="margin-top: 5rem;">Additional Information</h2>
+      <div class="row g-3">
+        <div class="col-12 col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">History</h5>
+              <p class="card-text">The Fibonacci sequence was introduced to the Western world by Leonardo of Pisa, also known as Fibonacci, in his book "Liber Abaci" in 1202.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Mathematical Properties</h5>
+              <p class="card-text">The Fibonacci sequence is closely related to the golden ratio, as the ratio of successive Fibonacci numbers converges to the golden ratio.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Applications</h5>
+              <p class="card-text">The Fibonacci sequence appears in nature, art, architecture, and computer algorithms, making it a fundamental concept in mathematics.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>

@@ -1,4 +1,3 @@
-<!-- filepath: c:\Xampp\htdocs\Automata-Number-Sequence--master\Automata-Number-Sequence--master\eucli.php -->
 <!doctype html>
 <html lang="en">
   <head>
@@ -23,9 +22,8 @@
         box-shadow: 0 0 15px #39ff14; /* Neon glow effect */
       }
 
-      .card h2 {
+      .card h2, .card h5 {
         font-family: 'Orbitron', sans-serif;
-        font-size: 36px;
         color: #39ff14; /* Neon green text */
       }
 
@@ -63,52 +61,78 @@
         box-shadow: 0 0 10px #ff073a, 0 0 20px #ff073a; /* Glow effect */
       }
 
-      label {
-        color: #39ff14; /* Neon green labels */
+      .btn-home {
+        background-color: #007bff; /* Blue button */
+        border: none;
+        color: #fff;
         font-family: 'Orbitron', sans-serif;
         font-size: 18px;
+        transition: all 0.3s ease;
       }
 
-      input {
-        background-color: #333;
+      .btn-home:hover {
+        background-color: #0056b3;
         color: #fff;
-        border: 1px solid #39ff14;
-        font-family: 'Roboto', sans-serif;
+        box-shadow: 0 0 10px #007bff, 0 0 20px #007bff; /* Glow effect */
       }
 
-      input:focus {
-        border-color: #39ff14;
-        box-shadow: 0 0 10px #39ff14;
+      @media (max-width: 768px) {
+        .card {
+          margin: 10px;
+        }
+
+        .card h2, .card h5 {
+          font-size: 24px;
+        }
+
+        .card p {
+          font-size: 16px;
+        }
+
+        label {
+          font-size: 14px;
+        }
+
+        input {
+          font-size: 14px;
+        }
+
+        .btn-warning, .btn-danger, .btn-home {
+          font-size: 14px;
+        }
       }
     </style>
   </head>
 
   <body>
-    <div class="card position-absolute top-0 start-50 translate-middle-x" style="width: 1200px; margin-top: 150px;">
+    <div class="container mt-5">
+      <div class="card mx-auto" style="max-width: 1200px; margin-top: 120px;">
         <div class="card-body">
-           <h2 class="fw-bold">Euclidean Algorithm</h2>
-           <p class="lh-base fst-italic">The Euclidean algorithm is a method for finding the greatest common divisor (GCD) of two integers. It works by repeatedly subtracting the smaller number from the larger one, or more efficiently, by dividing the larger number by the smaller and taking the remainder. This process continues until the remainder is zero.</p>
+          <h2 class="fw-bold text-center">Euclidean Algorithm</h2>
+          <p class="lh-base fst-italic text-center">The Euclidean algorithm is a method for finding the greatest common divisor (GCD) of two integers. It works by repeatedly subtracting the smaller number from the larger one, or more efficiently, by dividing the larger number by the smaller and taking the remainder. This process continues until the remainder is zero.</p>
         </div>
-    </div>
+      </div>
 
-    <div class="card position-absolute top-0 start-50 translate-middle-x" style="width: 1200px; margin-top: 320px;">
+      <div class="card mx-auto mt-4" style="max-width: 1200px;">
         <div class="card-body">
-            <form method="POST" action="">
-                <div class="row">
-                    <label for="num1" class="col-sm-3 col-form-label col-form-label-lg fw-bold">Input first number: </label>
-                    <div class="col-sm-3">
-                        <input type="number" name="num1" class="form-control form-control-lg" id="num1" placeholder="Enter number" required>
-                    </div>
-                    <label for="num2" class="col-sm-3 col-form-label col-form-label-lg fw-bold">Input second number: </label>
-                    <div class="col-sm-3">
-                        <input type="number" name="num2" class="form-control form-control-lg" id="num2" placeholder="Enter number" required>
-                    </div>
-                </div>
-                <div class="mt-4 text-center">
-                    <button type="submit" class="btn btn-warning btn-lg">Submit</button>
-                </div>
-            </form>
+          <form method="POST" action="">
+            <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <label for="num1" class="form-label fw-bold">Input first number:</label>
+                <input type="number" name="num1" class="form-control" id="num1" placeholder="Enter number" required>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="num2" class="form-label fw-bold">Input second number:</label>
+                <input type="number" name="num2" class="form-control" id="num2" placeholder="Enter number" required>
+              </div>
+            </div>
+            <div class="mt-4 text-center">
+              <button type="submit" class="btn btn-warning btn-lg">Submit</button>
+              <a href="index.html" class="btn btn-home btn-lg ms-2">Home</a>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
 
     <?php if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['num1']) && isset($_POST['num2'])): ?>
@@ -118,10 +142,10 @@
             $steps = [];
 
             if ($num1 <= 0 || $num2 <= 0): ?>
-                <div id="errorCard" class="card position-absolute top-0 start-50 translate-middle-x" style="width: 1200px; margin-top: 425px; background-color: #ff073a;">
+                <div id="errorCard" class="card mx-auto mt-4" style="max-width: 1200px; background-color: #ff073a;">
                     <div class="card-body">
-                        <h2 class="fw-bold" style="color: #fff;">Error</h2>
-                        <p class="fs-4 mb-0" style="font-size: 18px; color: #fff;">Please enter positive integers for both numbers.</p>
+                        <h2 class="fw-bold text-center" style="color: #fff;">Error</h2>
+                        <p class="fs-4 mb-0 text-center" style="font-size: 18px; color: #fff;">Please enter positive integers for both numbers.</p>
                         <div class="mt-4 d-flex justify-content-end align-items-center">
                             <p class="fw-bold fs-4 mb-0 me-3">Try again?</p>
                             <form method="POST" action="" class="d-flex">
@@ -143,16 +167,12 @@
                 }
                 $gcd = $a;
             ?>
-            <div id="gcdCard" class="card position-absolute top-0 start-50 translate-middle-x" style="width: 1200px; margin-top: 425px;">
+            <div id="gcdCard" class="card mx-auto mt-4" style="max-width: 1200px;">
                 <div class="card-body">
-                    <div class="d-flex align-items-center">
-                        <h2 class="fw-bold">The GCD of <?php echo $num1; ?> and <?php echo $num2; ?> is: </h2>
-                        <h2 class="fw-bold pt-1 ps-1"><?php echo $gcd; ?></h2>
-                    </div>
-                    
-                    <p class="fs-4 mb-0">Steps:</p>
-                    <p class="fs-4 mb-0"><?php echo implode('<br>', $steps); ?></p>
-
+                    <h2 class="fw-bold text-center">The GCD of <?php echo $num1; ?> and <?php echo $num2; ?> is:</h2>
+                    <h2 class="fw-bold text-center"><?php echo $gcd; ?></h2>
+                    <p class="fs-4 mb-0 text-center">Steps:</p>
+                    <p class="fs-4 mb-0 text-center"><?php echo implode('<br>', $steps); ?></p>
                     <div class="mt-4 d-flex justify-content-end align-items-center">
                         <p class="fw-bold fs-4 mb-0 me-3">Try again?</p>
                         <form method="POST" action="" class="d-flex">
@@ -164,6 +184,37 @@
             </div>
         <?php endif; ?>
     <?php endif; ?>
+
+    <!-- Additional Information Section -->
+    <div class="container mt-5 mb-5" style="margin-top: 15rem;">
+      <h2 class="text-center mb-4" style="margin-top: 5rem;">Additional Information</h2>
+      <div class="row g-3">
+        <div class="col-12 col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">History</h5>
+              <p class="card-text">The Euclidean Algorithm was first described by the ancient Greek mathematician Euclid in his book "Elements" around 300 BCE. It is one of the oldest algorithms still in use today.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Inventor</h5>
+              <p class="card-text">Euclid, often referred to as the "Father of Geometry," was a Greek mathematician who lived in Alexandria during the reign of Ptolemy I.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Applications</h5>
+              <p class="card-text">The Euclidean Algorithm is used in cryptography, computer science, and number theory to compute the greatest common divisor (GCD) of two integers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>
