@@ -17,24 +17,24 @@
       }
 
       .card {
-        background-color: #1a1a1a; /* Dark esports theme */
-        border: 2px solid #39ff14; /* Neon green border */
+        background-color: #1a1a1a; 
+        border: 2px solid #39ff14; 
         border-radius: 10px;
-        box-shadow: 0 0 15px #39ff14; /* Neon glow effect */
+        box-shadow: 0 0 15px #39ff14; 
       }
 
       .card h2, .card h5 {
         font-family: 'Orbitron', sans-serif;
-        color: #39ff14; /* Neon green text */
+        color: #39ff14; 
       }
 
       .card p {
         font-size: 18px;
-        color: #d1d1d1; /* Light gray text */
+        color: #d1d1d1; 
       }
 
       .btn-warning {
-        background-color: #39ff14; /* Neon green button */
+        background-color: #39ff14; 
         border: none;
         color: #000;
         font-family: 'Orbitron', sans-serif;
@@ -45,11 +45,11 @@
       .btn-warning:hover {
         background-color: #000;
         color: #39ff14;
-        box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14; /* Glow effect */
+        box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14; 
       }
 
       .btn-home {
-        background-color: #007bff; /* Blue button */
+        background-color: #007bff; 
         border: none;
         color: #fff;
         font-family: 'Orbitron', sans-serif;
@@ -60,7 +60,7 @@
       .btn-home:hover {
         background-color: #0056b3;
         color: #fff;
-        box-shadow: 0 0 10px #007bff, 0 0 20px #007bff; /* Glow effect */
+        box-shadow: 0 0 10px #007bff, 0 0 20px #007bff; 
       }
 
       @media (max-width: 768px) {
@@ -182,9 +182,9 @@
                 <div class="card-body">
                     <h2 class="fw-bold text-center">Pascal Triangle:</h2>
                     <pre class="fs-4 mb-0 text-center" style="color: #39ff14;">
-<?php foreach ($pascalTriangle as $row): ?>
-<?php echo implode(' ', $row) . "\n"; ?>
-<?php endforeach; ?>
+            <?php foreach ($pascalTriangle as $row): ?>
+          <?php echo implode(' ', $row) . "\n"; ?>
+            <?php endforeach; ?>
                     </pre>
                     <div class="mt-4 d-flex justify-content-end align-items-center">
                         <p class="fw-bold fs-4 mb-0 me-3">Try again?</p>
@@ -197,6 +197,37 @@
             </div>
         <?php endif; ?>
     <?php endif; ?>
+
+    <!-- Additional Information Section -->
+    <div class="container mt-5 mb-5" style="margin-top: 15rem;">
+      <h2 class="text-center mb-4" style="margin-top: 5rem;">Additional Information</h2>
+      <div class="row g-3">
+        <div class="col-12 col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">History</h5>
+              <p class="card-text">Pascal's triangle is named after Blaise Pascal, a French mathematician, although it was studied centuries earlier in India, Persia, China, and Italy.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Mathematical Properties</h5>
+              <p class="card-text">Pascal's triangle is used to calculate combinations, and it has connections to binomial expansions and Fibonacci numbers.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Applications</h5>
+              <p class="card-text">Pascal's triangle is used in probability, algebra, and combinatorics, and it appears in fractals and other mathematical patterns.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>

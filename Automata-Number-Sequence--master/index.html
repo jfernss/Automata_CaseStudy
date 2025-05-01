@@ -136,28 +136,35 @@
         position: sticky;
         top: 0;
         z-index: 50;
+        padding: 1.5rem;
       }
 
       .navbar a {
         color: #39ff14;
+        font-size: 1.25rem;
         transition: color 0.3s;
       }
 
       .navbar a:active {
-        color: #32cd32; /* Slightly darker neon green for active state */
+        color: #32cd32;
       }
 
       .navbar a:hover {
         color: #ffffff;
       }
 
+      .navbar .text-2xl {
+        font-size: 2.5rem;
+      }
+
       #mobile-menu a {
         color: #39ff14;
+        font-size: 1.25rem;
         transition: color 0.3s;
       }
 
       #mobile-menu a:active {
-        color: #32cd32; /* Slightly darker neon green for active state */
+        color: #32cd32;
       }
 
       #mobile-menu a:hover {
@@ -175,7 +182,7 @@
   <body>
     <nav class="navbar flex justify-between items-center p-4">
       <div class="flex items-center">
-        <div class="text-2xl font-bold neon-green">Fliptop Game</div>
+        <div class="text-xl font-bold neon-green ml-14">Fliptop Game</div>
       </div>
       <div class="hidden md:flex space-x-4">
         <a href="fibonacci.php" class="text-lg">Fibonacci</a>
