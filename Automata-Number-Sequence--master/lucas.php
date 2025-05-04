@@ -218,6 +218,26 @@
         <?php endif; ?>
     <?php endif; ?>
 
+  
+
+    <!-- Explanation Section -->
+    <div class="container mt-5">
+      <h2 class="text-center mb-4">How the Lucas Algorithm Works</h2>
+      <div class="card">
+        <div class="card-body">
+          <p class="fs-5">The Lucas sequence is generated using a simple algorithm:</p>
+          <ol class="fs-5">
+            <li>Start with two initial numbers: 2 and 1.</li>
+            <li>Calculate the next number by adding the two previous numbers.</li>
+            <li>Repeat the process to generate the desired number of terms.</li>
+          </ol>
+          <p class="fs-5">For example, the first few terms of the Lucas sequence are:</p>
+          <p class="fs-5">2, 1, 3, 4, 7, 11, 18, 29, 47, ...</p>
+          <p class="fs-5">This algorithm is efficient and can be implemented using a simple loop in programming.</p>
+        </div>
+      </div>
+    </div>
+
     <!-- Additional Information Section -->
     <div class="container mt-5 mb-5" style="margin-top: 15rem;">
       <h2 class="text-center mb-4" style="margin-top: 5rem;">Additional Information</h2>

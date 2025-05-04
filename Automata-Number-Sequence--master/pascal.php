@@ -198,6 +198,25 @@
         <?php endif; ?>
     <?php endif; ?>
 
+  
+    <!-- Explanation Section -->
+    <div class="container mt-5">
+      <h2 class="text-center mb-4">How Pascal's Triangle Works</h2>
+      <div class="card">
+        <div class="card-body">
+          <p class="fs-5">Pascal's triangle is generated using a simple algorithm:</p>
+          <ol class="fs-5">
+            <li>Start with a single 1 at the top.</li>
+            <li>Each subsequent row starts and ends with 1.</li>
+            <li>Each interior number is the sum of the two numbers directly above it.</li>
+          </ol>
+          <p class="fs-5">For example, the first few rows of Pascal's triangle are:</p>
+          <p class="fs-5">1<br>1 1<br>1 2 1<br>1 3 3 1<br>1 4 6 4 1</p>
+          <p class="fs-5">This algorithm is simple yet powerful, with applications in algebra and probability.</p>
+        </div>
+      </div>
+    </div>
+
     <!-- Additional Information Section -->
     <div class="container mt-5 mb-5" style="margin-top: 15rem;">
       <h2 class="text-center mb-4" style="margin-top: 5rem;">Additional Information</h2>

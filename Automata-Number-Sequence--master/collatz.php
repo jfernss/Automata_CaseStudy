@@ -233,6 +233,27 @@
     <?php endif; ?>
 <?php endif; ?>
 
+    
+
+    <!-- Explanation Section -->
+    <div class="container mt-5">
+      <h2 class="text-center mb-4">How the Collatz Algorithm Works</h2>
+      <div class="card">
+        <div class="card-body">
+          <p class="fs-5">The Collatz sequence is generated using a simple algorithm:</p>
+          <ol class="fs-5">
+            <li>Start with any positive integer.</li>
+            <li>If the number is even, divide it by 2.</li>
+            <li>If the number is odd, multiply it by 3 and add 1.</li>
+            <li>Repeat the process until the number becomes 1.</li>
+          </ol>
+          <p class="fs-5">For example, starting with 6, the sequence is:</p>
+          <p class="fs-5">6, 3, 10, 5, 16, 8, 4, 2, 1</p>
+          <p class="fs-5">This algorithm is simple yet intriguing, as it always seems to reach 1.</p>
+        </div>
+      </div>
+    </div>
+
     <!-- Additional Information Section -->
     <div class="container mt-5 mb-5" style="margin-top: 15rem;">
       <h2 class="text-center mb-4" style="margin-top: 5rem;">Additional Information</h2>

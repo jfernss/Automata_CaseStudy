@@ -217,6 +217,25 @@
     <?php endif; ?>
     <?php endif; ?>
 
+
+    <!-- Explanation Section -->
+    <div class="container mt-5">
+      <h2 class="text-center mb-4">How the Fibonacci Algorithm Works</h2>
+      <div class="card">
+        <div class="card-body">
+          <p class="fs-5">The Fibonacci sequence is generated using a simple algorithm:</p>
+          <ol class="fs-5">
+            <li>Start with two initial numbers: 0 and 1.</li>
+            <li>Calculate the next number by adding the two previous numbers.</li>
+            <li>Repeat the process to generate the desired number of terms.</li>
+          </ol>
+          <p class="fs-5">For example, the first few terms of the Fibonacci sequence are:</p>
+          <p class="fs-5">0, 1, 1, 2, 3, 5, 8, 13, 21, ...</p>
+          <p class="fs-5">This algorithm is efficient and can be implemented using a simple loop in programming.</p>
+        </div>
+      </div>
+    </div>
+
     <!-- Additional Information Section -->
     <div class="container mt-5 mb-5" style="margin-top: 15rem;">
       <h2 class="text-center mb-4" style="margin-top: 5rem;">Additional Information</h2>

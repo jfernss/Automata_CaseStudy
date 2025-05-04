@@ -219,6 +219,26 @@
         <?php endif; ?>
     <?php endif; ?>
 
+   
+
+    <!-- Explanation Section -->
+    <div class="container mt-5">
+      <h2 class="text-center mb-4">How the Tribonacci Algorithm Works</h2>
+      <div class="card">
+        <div class="card-body">
+          <p class="fs-5">The Tribonacci sequence is generated using a simple algorithm:</p>
+          <ol class="fs-5">
+            <li>Start with three initial numbers: 0, 0, and 1.</li>
+            <li>Calculate the next number by adding the three previous numbers.</li>
+            <li>Repeat the process to generate the desired number of terms.</li>
+          </ol>
+          <p class="fs-5">For example, the first few terms of the Tribonacci sequence are:</p>
+          <p class="fs-5">0, 0, 1, 1, 2, 4, 7, 13, 24, ...</p>
+          <p class="fs-5">This algorithm is efficient and can be implemented using a simple loop in programming.</p>
+        </div>
+      </div>
+    </div>
+
     <!-- Additional Information Section -->
     <div class="container mt-5 mb-5" style="margin-top: 15rem;">
       <h2 class="text-center mb-4" style="margin-top: 5rem;">Additional Information</h2>
@@ -252,4 +272,4 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>
-</html></div>
+</html>

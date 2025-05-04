@@ -186,6 +186,26 @@
         <?php endif; ?>
     <?php endif; ?>
 
+   
+    <!-- Explanation Section -->
+    <div class="container mt-5">
+      <h2 class="text-center mb-4">How the Euclidean Algorithm Works</h2>
+      <div class="card">
+        <div class="card-body">
+          <p class="fs-5">The Euclidean algorithm is used to find the greatest common divisor (GCD) of two integers:</p>
+          <ol class="fs-5">
+            <li>Start with two integers, a and b.</li>
+            <li>Divide a by b and take the remainder, r.</li>
+            <li>Replace a with b and b with r.</li>
+            <li>Repeat the process until b becomes 0. The GCD is the last non-zero remainder.</li>
+          </ol>
+          <p class="fs-5">For example, to find the GCD of 48 and 18:</p>
+          <p class="fs-5">48 = 18 × 2 + 12<br>18 = 12 × 1 + 6<br>12 = 6 × 2 + 0<br>The GCD is 6.</p>
+          <p class="fs-5">This algorithm is efficient and widely used in mathematics and computer science.</p>
+        </div>
+      </div>
+    </div>
+
     <!-- Additional Information Section -->
     <div class="container mt-5 mb-5" style="margin-top: 15rem;">
       <h2 class="text-center mb-4" style="margin-top: 5rem;">Additional Information</h2>
