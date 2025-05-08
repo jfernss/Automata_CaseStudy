@@ -164,29 +164,29 @@
                 </div>
             <?php else:
                 function generatePascalTriangle($rows) {
-                    $triangle = [];
-                    for ($i = 0; $i < $rows; $i++) {
-                        $triangle[$i] = [];
-                        $triangle[$i][0] = 1;
-                        for ($j = 1; $j < $i; $j++) {
-                            $triangle[$i][$j] = $triangle[$i - 1][$j - 1] + $triangle[$i - 1][$j];
-                        }
-                        $triangle[$i][$i] = 1;
-                    }
-                    return $triangle;
-                }
+                  $triangle = [];
+                  for ($i = 0; $i < $rows; $i++) {
+                      $triangle[$i] = [];
+                      $triangle[$i][0] = 1;
+                      for ($j = 1; $j < $i; $j++) {
+                          $triangle[$i][$j] = $triangle[$i - 1][$j - 1] + $triangle[$i - 1][$j];
+                      }
+                      $triangle[$i][$i] = 1;
+                  }
+                  return $triangle;
+              }
 
-                $pascalTriangle = generatePascalTriangle($numRows);
-            ?>
-            <div id="pascalCard" class="card mx-auto mt-4" style="max-width: 1200px;">
-                <div class="card-body">
-                    <h2 class="fw-bold text-center">Pascal Triangle:</h2>
-                    <pre class="fs-4 mb-0 text-center" style="color: #39ff14;">
-            <?php foreach ($pascalTriangle as $row): ?>
-          <?php echo implode(' ', $row) . "\n"; ?>
-            <?php endforeach; ?>
-                    </pre>
-                    <div class="mt-4 d-flex justify-content-end align-items-center">
+              $pascalTriangle = generatePascalTriangle($numRows);
+          ?>
+          <div id="pascalCard" class="card mx-auto mt-4" style="max-width: 1200px;">
+              <div class="card-body">
+                  <h2 class="fw-bold text-center">Pascal Triangle:</h2>
+                  <pre class="fs-4 mb-0 text-center" style="color: #39ff14;">
+<?php foreach ($pascalTriangle as $row): ?>
+<?php echo implode(' ', $row) . "\n"; ?>
+<?php endforeach; ?>
+                  </pre>
+                    <div class="mt-4 d-flex justify-content-end align-items-center" style="max-width: 1200px;">
                         <p class="fw-bold fs-4 mb-0 me-3">Try again?</p>
                         <form method="POST" action="" class="d-flex">
                             <button type="submit" name="tryAgain" class="btn btn-warning btn-lg me-2">YES</button>
