@@ -149,14 +149,31 @@
     <?php
     function generatePascalTriangle($rows) {
         $triangle = [];
-        for ($i = 0; $i < $rows; $i++) {
+        
+        // Base case for 0 rows
+        if ($rows >= 0) {
+            $triangle[0] = [1];
+        }
+        
+        // Base case for 1 row
+        if ($rows >= 1) {
+            $triangle[1] = [1, 1];
+        }
+        
+        // Generate the rest of the rows 
+        for ($i = 2; $i < $rows; $i++) {
             $triangle[$i] = [];
-            $triangle[$i][0] = 1;
+            $triangle[$i][0] = 1;  
+
+            // Generate the middle values of the row
             for ($j = 1; $j < $i; $j++) {
                 $triangle[$i][$j] = $triangle[$i - 1][$j - 1] + $triangle[$i - 1][$j];
             }
+
+         
             $triangle[$i][$i] = 1;
         }
+        
         return $triangle;
     }
 
@@ -186,37 +203,8 @@
                         </div>
                     </div>
                 </div>';
-        } elseif ($numRows === 0) {
-            echo '<div id="pascalCard" class="card mx-auto mt-4" style="max-width: 1200px;">
-                    <div class="card-body">
-                        <h2 class="fw-bold text-center">Pascal Triangle:</h2>
-                        <pre class="fs-4 mb-0 text-center" style="color: #39ff14;">1</pre>
-                        <div class="mt-4 d-flex justify-content-end align-items-center" style="max-width: 1200px;">
-                            <p class="fw-bold fs-4 mb-0 me-3">Try again?</p>
-                            <form method="POST" action="" class="d-flex">
-                                <button type="submit" name="tryAgain" class="btn btn-warning btn-lg me-2">YES</button>
-                                <a href="index.html" class="btn btn-danger btn-lg">NO</a>
-                            </form>
-                        </div>
-                    </div>
-                </div>';
-        } elseif ($numRows === 1) {
-            echo '<div id="pascalCard" class="card mx-auto mt-4" style="max-width: 1200px;">
-                    <div class="card-body">
-                        <h2 class="fw-bold text-center">Pascal Triangle:</h2>
-                        <pre class="fs-4 mb-0 text-center" style="color: #39ff14;">&nbsp;&nbsp;1&nbsp;&nbsp;
-1&nbsp;1</pre>
-                        <div class="mt-4 d-flex justify-content-end align-items-center" style="max-width: 1200px;">
-                            <p class="fw-bold fs-4 mb-0 me-3">Try again?</p>
-                            <form method="POST" action="" class="d-flex">
-                                <button type="submit" name="tryAgain" class="btn btn-warning btn-lg me-2">YES</button>
-                                <a href="index.html" class="btn btn-danger btn-lg">NO</a>
-                            </form>
-                        </div>
-                    </div>
-                </div>';
         } else {
-            $pascalTriangle = generatePascalTriangle($numRows + 1); // Adjust to include 0th row
+            $pascalTriangle = generatePascalTriangle($numRows); // Adjust to include 0th row
             echo '<div id="pascalCard" class="card mx-auto mt-4" style="max-width: 1200px;">
                     <div class="card-body">
                         <h2 class="fw-bold text-center">Pascal Triangle:</h2>
@@ -250,8 +238,6 @@
             <li>Each subsequent row starts and ends with 1.</li>
             <li>Each interior number is the sum of the two numbers directly above it.</li>
           </ol>
-          <p class="fs-5">For example, the first few rows of Pascal's triangle are:</p>
-          <p class="fs-5">1<br>1 1<br>1 2 1<br>1 3 3 1<br>1 4 6 4 1</p>
           <p class="fs-5">This algorithm is simple yet powerful, with applications in algebra and probability.</p>
         </div>
       </div>
