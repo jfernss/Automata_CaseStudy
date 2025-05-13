@@ -204,7 +204,8 @@
             echo '<div id="pascalCard" class="card mx-auto mt-4" style="max-width: 1200px;">
                     <div class="card-body">
                         <h2 class="fw-bold text-center">Pascal Triangle:</h2>
-                        <pre class="fs-4 mb-0 text-center" style="color: #39ff14;">1 1</pre>
+                        <pre class="fs-4 mb-0 text-center" style="color: #39ff14;">&nbsp;&nbsp;1&nbsp;&nbsp;
+1&nbsp;1</pre>
                         <div class="mt-4 d-flex justify-content-end align-items-center" style="max-width: 1200px;">
                             <p class="fw-bold fs-4 mb-0 me-3">Try again?</p>
                             <form method="POST" action="" class="d-flex">
