@@ -110,7 +110,9 @@
       <div class="card mx-auto" style="max-width: 1200px; margin-top: 120px;">
         <div class="card-body">
           <h2 class="fw-bold text-center">Pascal Triangle</h2>
-          <p class="lh-base fst-italic text-center">Pascal's triangle is a triangular array of the binomial coefficients. Each number is the sum of the two numbers directly above it.</p>
+          <p class="lh-base fst-italic text-center">A pascal's triangle is an arrangement of numbers in a triangular array such that the numbers at the end of each row are 1 
+            and the remaining numbers are the sum of the nearest two numbers in the above row. 
+            The number of elements in the nth row is equal to (n + 1) elements. </p>
         </div>
       </div>
 

@@ -1,218 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Home</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="icon" href="Fliptop.jpg" type="image/png" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      body {
-        background: url("Home.png") no-repeat center center fixed;
-        background-size: cover;
-        font-family: "Play", sans-serif;
-        margin: 0;
-        padding: 0;
-      }
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="icon" href="Fliptop.jpg" type="image/png" />
+<link
+href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+rel="stylesheet"
+/>
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+rel="stylesheet"
+integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+crossorigin="anonymous"
+/>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+body {
+background: url("Home.png") no-repeat center center fixed;
+background-size: cover;
+font-family: "Play", sans-serif;
+margin: 0;
+padding: 0;
+}
 
-      .menu-buttons {
-        display: none;
-      }
+.menu-buttons {
+display: none;
+}
 
-      .menu-buttons.mobile {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.9);
-        z-index: 1000;
-        padding-top: 2rem;
-        align-items: center;
-        justify-content: center;
-      }
+.menu-buttons.mobile {
+display: flex;
+flex-direction: column;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.9);
+z-index: 1000;
+padding-top: 2rem;
+align-items: center;
+justify-content: center;
+}
 
-      .hamburger-menu {
-        display: block;
-        position: fixed;
-        top: 1rem;
-        right: 1rem;
-        z-index: 1000;
-        cursor: pointer;
-      }
+.hamburger-menu {
+display: block;
+position: fixed;
+top: 1rem;
+right: 1rem;
+z-index: 1000;
+cursor: pointer;
+}
 
-      .hamburger-menu div {
-        width: 30px;
-        height: 4px;
-        background-color: #39ff14;
-        margin: 5px 0;
-        transition: 0.4s;
-      }
+.hamburger-menu div {
+width: 30px;
+height: 4px;
+background-color: #39ff14;
+margin: 5px 0;
+transition: 0.4s;
+}
 
-      .hamburger-menu .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        width: 100%;
-      }
+.hamburger-menu .container {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100%;
+width: 100%;
+}
 
-      /* For tablets and smaller screens (768px and below) */
-      @media (max-width: 768px) {
-        #mobile-menu {
-          display: none;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          gap: 1rem;
-        }
+/* For tablets and smaller screens (768px and below) */
+@media (max-width: 768px) {
+#mobile-menu {
+display: none;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 1rem;
+}
 
-        #mobile-menu.active {
-          display: flex;
-        }
-      }
+#mobile-menu.active {
+display: flex;
+}
+}
 
-      @media (min-width: 769px) {
-        #mobile-menu {
-          display: none;
-        }
-      }
+@media (min-width: 769px) {
+#mobile-menu {
+display: none;
+}
+}
 
-      /* For small devices (425px and below) */
-      @media (max-width: 425px) {
-        body {
-          background: url("Game.png") no-repeat center center fixed;
-          background-size: cover;
-        }
+/* For small devices (425px and below) */
+@media (max-width: 425px) {
+body {
+background: url("Game.png") no-repeat center center fixed;
+background-size: cover;
+}
 
-        .hamburger-menu {
-          display: block;
-        }
+.hamburger-menu {
+display: block;
+}
 
-        .menu-buttons {
-          display: none;
-        }
-      }
+.menu-buttons {
+display: none;
+}
+}
 
-      /* For extra small devices (375px and below) */
-      @media (max-width: 375px) {
-        .menu-buttons {
-          gap: 0.8rem;
-          margin-top: 1.5rem;
-        }
+/* For extra small devices (375px and below) */
+@media (max-width: 375px) {
+.menu-buttons {
+gap: 0.8rem;
+margin-top: 1.5rem;
+}
 
-        .menu-buttons .btn {
-          font-size: 16px;
-          min-width: 160px;
-          height: 40px;
-        }
-      }
+.menu-buttons .btn {
+font-size: 16px;
+min-width: 160px;
+height: 40px;
+}
+}
 
-      .neon-green {
-        color: #39ff14;
-      }
+.navbar .neon-green {
+color: #39ff14;
+font-size: 2rem;
+}
 
-      .neon-green-bg {
-        background-color: #39ff14;
-      }
+.neon-green-bg {
+background-color: #39ff14;
+}
 
-      .navbar {
-        background-color: rgba(0, 0, 0, 0.8);
-        position: sticky;
-        top: 0;
-        z-index: 50;
-        padding: 1.5rem;
-      }
+.navbar {
+background-color: rgba(0, 0, 0, 0.8);
+position: sticky;
+top: 0;
+z-index: 50;
+padding: 1.5rem;
+}
 
-      .navbar a {
-        color: #39ff14;
-        font-size: 1.25rem;
-        transition: color 0.3s;
-      }
+.navbar a {
+color: #39ff14;
+font-size: 1.75rem;
+transition: color 0.3s;
+margin-right: 2rem;
+}
 
-      .navbar a:active {
-        color: #32cd32;
-      }
+.navbar a:active {
+color: #32cd32;
+}
 
-      .navbar a:hover {
-        color: #ffffff;
-      }
+.navbar a:hover {
+color: #ffffff;
+}
 
-      .navbar .text-2xl {
-        font-size: 2.5rem;
-      }
+.navbar .text-2xl {
+font-size: 2.5rem;
+}
 
-      #mobile-menu a {
-        color: #39ff14;
-        font-size: 1.25rem;
-        transition: color 0.3s;
-      }
+#mobile-menu a {
+color: #39ff14;
+font-size: 1.75rem;
+transition: color 0.3s;
+}
 
-      #mobile-menu a:active {
-        color: #32cd32;
-      }
+#mobile-menu a:active {
+color: #32cd32;
+}
 
-      #mobile-menu a:hover {
-        color: #ffffff;
-      }
-    </style>
-    <script>
-      function toggleMenu() {
-        const menu = document.getElementById("mobile-menu");
-        menu.classList.toggle("active");
-      }
-    </script>
-  </head>
+#mobile-menu a:hover {
+color: #ffffff;
+}
+</style>
+<script>
+function toggleMenu() {
+const menu = document.getElementById("mobile-menu");
+menu.classList.toggle("active");
+}
+</script>
+</head>
 
-  <body>
-    <nav class="navbar flex justify-between items-center p-4">
-      <div class="flex items-center">
-        <div class="text-xl font-bold neon-green ml-14">Fliptop Game</div>
-      </div>
-      <div class="hidden md:flex space-x-4">
-        <a href="fibonacci.php" class="text-lg">Fibonacci</a>
-        <a href="lucas.php" class="text-lg">Lucas</a>
-        <a href="tribo.php" class="text-lg">Tribonacci</a>
-        <a href="collatz.php" class="text-lg">Collatz</a>
-        <a href="eucli.php" class="text-lg">Euclidean Algorithm</a>
-        <a href="pascal.php" class="text-lg">Pascal's Triangle</a>
-      </div>
-      <div class="md:hidden cursor-pointer" onclick="toggleMenu()">
-        <div class="w-8 h-1 bg-green-500 mb-1"></div>
-        <div class="w-8 h-1 bg-green-500 mb-1"></div>
-        <div class="w-8 h-1 bg-green-500"></div>
-      </div>
-    </nav>
-    <div
-      id="mobile-menu"
-      class="hidden flex-col items-center space-y-4 p-4 bg-black text-center"
-    >
-      <a href="fibonacci.php" class="text-lg neon-green">Fibonacci</a>
-      <a href="lucas.php" class="text-lg neon-green">Lucas</a>
-      <a href="tribo.php" class="text-lg neon-green">Tribonacci</a>
-      <a href="collatz.php" class="text-lg neon-green">Collatz</a>
-      <a href="eucli.php" class="text-lg neon-green">Euclidean Algorithm</a>
-      <a href="pascal.php" class="text-lg neon-green">Pascal's Triangle</a>
-    </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+<body>
+<nav class="navbar flex justify-between items-center p-4">
+<div class="flex items-center">
+<div class="text-xl font-bold neon-green ml-14">FLIPTOP GAME</div>
+</div>
+<div class="hidden md:flex">
+<a href="fibonacci.php" class="text-lg">Fibonacci</a>
+<a href="lucas.php" class="text-lg">Lucas</a>
+<a href="tribo.php" class="text-lg">Tribonacci</a>
+<a href="collatz.php" class="text-lg">Collatz</a>
+<a href="eucli.php" class="text-lg">Euclidean Algorithm</a>
+<a href="pascal.php" class="text-lg">Pascal's Triangle</a>
+</div>
+<div class="md:hidden cursor-pointer" onclick="toggleMenu()">
+<div class="w-8 h-1 bg-green-500 mb-1"></div>
+<div class="w-8 h-1 bg-green-500 mb-1"></div>
+<div class="w-8 h-1 bg-green-500"></div>
+</div>
+</nav>
+<div
+id="mobile-menu"
+class="hidden flex-col items-center space-y-4 p-4 bg-black text-center"
+>
+<a href="fibonacci.php" class="text-lg neon-green">Fibonacci</a>
+<a href="lucas.php" class="text-lg neon-green">Lucas</a>
+<a href="tribo.php" class="text-lg neon-green">Tribonacci</a>
+<a href="collatz.php" class="text-lg neon-green">Collatz</a>
+<a href="eucli.php" class="text-lg neon-green">Euclidean Algorithm</a>
+<a href="pascal.php" class="text-lg neon-green">Pascal's Triangle</a>
+</div>
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+crossorigin="anonymous"
+></script>
+</body>
 </html>
+
