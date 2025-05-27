@@ -189,7 +189,7 @@
                             <p class="fw-bold fs-4 mb-0 me-3">Try again?</p>
                             <form method="POST" action="" class="d-flex">
                                 <button type="submit" name="tryAgain" class="btn btn-warning btn-lg me-2">YES</button>
-                                <a href="index.html" class="btn btn-dark btn-lg">NO</a>
+                                <a href="index.html" class="btn btn-danger btn-lg">NO</a>
                             </form>
                         </div>
                     </div>
