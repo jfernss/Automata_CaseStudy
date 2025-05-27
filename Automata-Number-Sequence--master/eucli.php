@@ -156,6 +156,20 @@
                         </div>
                     </div>
                 </div>
+            <?php elseif ($num1 == $num2): ?>
+                <div id="errorCard" class="card mx-auto mt-4" style="max-width: 1200px; background-color: #2c2c2c; border: 2px solid #39ff14;">
+                    <div class="card-body">
+                        <h2 class="fw-bold text-center" style="color: #ff073a;">Error</h2>
+                        <p class="fs-4 mb-0 text-center" style="font-size: 18px; color: #fff;">Two identical inputs are invalid.</p>
+                        <div class="mt-4 d-flex justify-content-end align-items-center">
+                            <p class="fw-bold fs-4 mb-0 me-3">Try again?</p>
+                            <form method="POST" action="" class="d-flex">
+                                <button type="submit" name="tryAgain" class="btn btn-warning btn-lg me-2">YES</button>
+                                <a href="index.html" class="btn btn-danger btn-lg">NO</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             <?php else:
                 $a = max($num1, $num2);
                 $b = min($num1, $num2);

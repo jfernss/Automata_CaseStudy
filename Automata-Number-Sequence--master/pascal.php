@@ -192,7 +192,7 @@
         if ($numRows < 0) {
             echo '<div id="errorCard" class="card mx-auto mt-4" style="max-width: 1200px; background-color: #2c2c2c; border: 2px solid #39ff14;">
                     <div class="card-body">
-                        <h2 class="fw-bold text-center" style="color: #fff;">Error</h2>
+                        <h2 class="fw-bold text-center" style="color: #ff073a;">Error</h2>
                         <p class="fs-4 mb-0 text-center" style="font-size: 18px; color: #fff;">Negative numbers are not allowed. Please enter a number greater than or equal to 0.</p>
                         <div class="mt-4 d-flex justify-content-end align-items-center">
                             <p class="fw-bold fs-4 mb-0 me-3">Try again?</p>
