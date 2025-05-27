@@ -181,7 +181,7 @@
         $rowCount = count($triangle);
         foreach ($triangle as $i => $row) {
             // Calculate indentation for each row
-            $indentation = str_repeat('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;', ($rowCount - $i) * 2);
+            $indentation = str_repeat('&nbsp;', ($rowCount - $i) * 2);
             echo '<div class="text-center">' . $indentation . implode(' ', $row) . '</div>';
         }
     }
@@ -209,9 +209,24 @@
                     <div class="card-body">
                         <h2 class="fw-bold text-center">Pascal Triangle:</h2>
                         <pre class="fs-4 mb-0 text-center" style="color: #39ff14;">';
-            foreach ($pascalTriangle as $row) {
-                echo implode(' ', $row) . "\n";
-            }
+                        $minCellWidth = 4; // Minimum spacing for clean layout
+$maxNumLength = strlen(max(array_map('max', $pascalTriangle)));
+$cellWidth = max($maxNumLength + 2, $minCellWidth);
+
+// Total width of the last row (used to center all rows)
+$maxRowWidth = count(end($pascalTriangle)) * $cellWidth;
+
+foreach ($pascalTriangle as $row) {
+    $line = '';
+    foreach ($row as $num) {
+        $line .= str_pad($num, $cellWidth, ' ', STR_PAD_BOTH);
+    }
+
+    // Center the whole row relative to the widest one
+    echo str_pad($line, $maxRowWidth, ' ', STR_PAD_BOTH) . "\n";
+
+}
+
             echo '</pre>
                         <div class="mt-4 d-flex justify-content-end align-items-center" style="max-width: 1200px;">
                             <p class="fw-bold fs-4 mb-0 me-3">Try again?</p>
