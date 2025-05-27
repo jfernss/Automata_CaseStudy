@@ -161,7 +161,7 @@
         }
         
         // Generate the rest of the rows 
-        for ($i = 2; $i < $rows; $i++) {
+        for ($i = 2; $i <= $rows; $i++) {
             $triangle[$i] = [];
             $triangle[$i][0] = 1;  
 
@@ -181,7 +181,7 @@
         $rowCount = count($triangle);
         foreach ($triangle as $i => $row) {
             // Calculate indentation for each row
-            $indentation = str_repeat('&nbsp;', ($rowCount - $i) * 2);
+            $indentation = str_repeat('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;', ($rowCount - $i) * 2);
             echo '<div class="text-center">' . $indentation . implode(' ', $row) . '</div>';
         }
     }
